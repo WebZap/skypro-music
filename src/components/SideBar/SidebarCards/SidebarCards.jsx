@@ -3,13 +3,14 @@ import SkeletonSidebar from "../../Skeleton_modules/SkeletonSidebar";
 import SidebarItem from "./SidebarItem/SidebarItem";
 
 const SidebarCards = (props) => {
-    const [viseble, setViseble] = useState(false);
+    const { sideBarCards } = props;
 
+    const [viseble, setViseble] = useState(false);
     setTimeout(() => {
         setViseble(true);
     }, 2000);
 
-    let sideBarItems = props.sideBarCards.map((card) =>
+    let sideBarItems = sideBarCards.map((card) =>
         viseble ? (
             <SidebarItem
                 key={card.id}

@@ -1,18 +1,26 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const FilterList = () => {
+const FilterList = ({ dataFilter }) => {
     return (
-        <div className="filter-list" style={{position:"absolute", top: "50px"}}>
+        <div
+            className="filter-list"
+            style={{ position: "absolute", top: "50px" }}
+        >
             <ul className="filter-list__items">
-                <li className="filter-list__item filter-list__item--active">Активный элемент</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
+                {dataFilter.map((item) => (
+                    <NavLink
+                        style={{
+                            display: "block",
+                            textDecoration: "none",
+                            color: "inherit",
+                        }}
+                        to={item.path}
+                        className="filter-list__item filter-list__item--active"
+                    >
+                        {item.titleItem}
+                    </NavLink>
+                ))}
             </ul>
         </div>
     );

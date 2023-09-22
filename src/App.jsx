@@ -13,8 +13,8 @@ const App = (props) => {
             <div className="container">
                 <main className="main">
                     <NavMenu />
-                    <CenterBlock />
-                    <SideBar sideBarCards={props.sideBarCards} />
+                    <CenterBlock state={props.state} />
+                    <SideBar state={props.state} />
                 </main>
                 <PlayerBar />
                 <Footer />
@@ -22,6 +22,5 @@ const App = (props) => {
         </div>
     );
 };
-
 
 export default App;

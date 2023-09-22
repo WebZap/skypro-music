@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const MenuList = () => {
     return (
         <ul className="menu__list">
@@ -6,11 +8,9 @@ const MenuList = () => {
                     Главное
                 </a>
             </li>
-            <li className="menu__item">
-                <a href="#" className="menu__link">
-                    Мой плейлист
-                </a>
-            </li>
+            <NavLink style={{ display: "block" }} to="/" className="menu__item">
+                Мой плейлист
+            </NavLink>
             <li className="menu__item">
                 <a href="../signin.html" className="menu__link">
                     Войти

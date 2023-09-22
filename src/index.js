@@ -3,22 +3,33 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
-import store from './redux/store';
+import store from './redux/store'
 
 import './style.css';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-console.log(store);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const renderEntireTree = () => {
-    root.render(
-        <App
-            store={store}
-            sideBarCards={store.getSidebarCards()}
+console.log(`store.getState()`, store.getState());
 
-        />
+const renderEntireTree = (state) => {
+    root.render(
+        <Router>
+            <App
+                state={state}
+            />
+        </Router>
     );
 }
 
-renderEntireTree()
+
+
+renderEntireTree(store.getState())
+
+store.subscribe(() => {
+    let state = store.getState()
+    renderEntireTree(state)
+})
 

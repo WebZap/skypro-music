@@ -1,22 +1,26 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import FilterList from "./FilterList/FilterList";
-import {getTitleFilterName} from "../../../../redux/store";
+import { getTitleFilterName } from "../../../../redux/store****";
+import { NavLink } from "react-router-dom";
 
 const FIlterButton = (props) => {
-    const [open, setOpen] = useState(null)
+    const { title, isOpen, selectFilter, path, dataList } = props;
 
-    const toggleCLick = () => {
-        setOpen((prev)=>!prev)
-    }
-
-    getTitleFilterName()
-
-    let filterMenu = open ? <FilterList/> : null
-
-    return (<div style={{display: "flex", flexDirection: "column", position: "relative"}}>
-
-            <div  className="filter__button button-author _btn-text" onClick={toggleCLick}>{props.title}</div>
-            {filterMenu}
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                position: "relative",
+            }}
+        >
+            <div
+                className="filter__button button-author _btn-text"
+                onClick={selectFilter}
+            >
+                {title}
+            </div>
+            {isOpen && <FilterList dataFilter={dataList} />}
         </div>
     );
 };

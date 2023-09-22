@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import ContentSongs from "./ContentSongs/ContentSongs";
 
 const SongsList = () => {
@@ -13,7 +14,18 @@ const SongsList = () => {
                     </svg>
                 </div>
             </div>
-            <ContentSongs />
+            <Routes>
+                <Route path="/" element={<ContentSongs />} />
+                {/* <Route path="/author-filter/" element={<ContentSongs />} />
+                <Route path="/year-filter/" element={<ContentSongs />} />
+                <Route path="/genre-filter/" element={<ContentSongs />} /> */}
+                {/* <Route
+                    path="/playlist-day-filter/"
+                    element={<ContentSongs />}
+                />
+                <Route path="/100-dance-filter/" element={<ContentSongs />} />
+                <Route path="/indi-filter/" element={<ContentSongs />} /> */}
+            </Routes>
         </div>
     );
 };

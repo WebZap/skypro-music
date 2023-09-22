@@ -5,7 +5,9 @@ const SideBar = (props) => {
     return (
         <div className="main__sidebar sidebar">
             <Personal />
-            <SidebarCards sideBarCards={props.sideBarCards} />
+            <SidebarCards
+                sideBarCards={props.state.sideBar.sideBarCardsArray}
+            />
         </div>
     );
 };
