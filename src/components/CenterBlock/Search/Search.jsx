@@ -1,16 +1,17 @@
+import {
+    IconSearch,
+    InputHolder,
+    SearchWrapper,
+} from "../../../styled_components/searchComponents";
+
 const Search = () => {
     return (
-        <div className="centerblock__search search">
-            <svg className="search__svg">
+        <SearchWrapper>
+            <IconSearch>
                 <use xlinkHref="img/icon/sprite.svg#icon-search"></use>
-            </svg>
-            <input
-                className="search__text"
-                type="search"
-                placeholder="Поиск"
-                name="search"
-            />
-        </div>
+            </IconSearch>
+            <InputHolder type="search" placeholder="Поиск" name="search" />
+        </SearchWrapper>
     );
 };
 

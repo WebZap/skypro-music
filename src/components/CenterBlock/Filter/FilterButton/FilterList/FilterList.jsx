@@ -1,28 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {
+    FilterListItems,
+    FilterListWrapp,
+    FilterNavLinks,
+} from "../../../../../styled_components/filterComponents";
 
-const FilterList = ({ dataFilter }) => {
+const FilterList = ({ dataList }) => {
     return (
-        <div
-            className="filter-list"
-            style={{ position: "absolute", top: "50px" }}
-        >
-            <ul className="filter-list__items">
-                {dataFilter.map((item) => (
-                    <NavLink
-                        style={{
-                            display: "block",
-                            textDecoration: "none",
-                            color: "inherit",
-                        }}
-                        to={item.path}
-                        className="filter-list__item filter-list__item--active"
-                    >
+        <FilterListWrapp>
+            <FilterListItems>
+                {dataList.map((item) => (
+                    <FilterNavLinks to={item.path}>
                         {item.titleItem}
-                    </NavLink>
+                    </FilterNavLinks>
                 ))}
-            </ul>
-        </div>
+            </FilterListItems>
+        </FilterListWrapp>
     );
 };
 

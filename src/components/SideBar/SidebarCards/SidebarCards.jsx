@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SkeletonSidebar from "../../Skeleton_modules/SkeletonSidebar";
 import SidebarItem from "./SidebarItem/SidebarItem";
+import { CardsWrapp } from "../../../styled_components/sidebarComponents";
 
 const SidebarCards = (props) => {
     const { sideBarCards } = props;
@@ -23,7 +24,7 @@ const SidebarCards = (props) => {
         )
     );
 
-    return <div className="sidebar__block">{sideBarItems}</div>;
+    return <CardsWrapp>{sideBarItems}</CardsWrapp>;
 };
 
 export default SidebarCards;

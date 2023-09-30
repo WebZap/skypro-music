@@ -1,19 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import ContentSongs from "./ContentSongs/ContentSongs";
+import {
+    Column,
+    Content,
+    Title,
+    TitleSvg,
+} from "../../../styled_components/songsListComponents";
 
 const SongsList = () => {
     return (
-        <div className="centerblock__content">
-            <div className="content__title playlist-title">
-                <div className="playlist-title__col col01">Трек</div>
-                <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
-                <div className="playlist-title__col col03">АЛЬБОМ</div>
-                <div className="playlist-title__col col04">
-                    <svg className="playlist-title__svg" alt="time">
+        <Content>
+            <Title>
+                <Column width={447}>Трек</Column>
+                <Column width={321}>ИСПОЛНИТЕЛЬ</Column>
+                <Column width={245}>АЛЬБОМ</Column>
+                <Column width={60} align={"end"}>
+                    <TitleSvg alt="time">
                         <use xlinkHref="img/icon/sprite.svg#icon-watch"></use>
-                    </svg>
-                </div>
-            </div>
+                    </TitleSvg>
+                </Column>
+            </Title>
             <Routes>
                 <Route path="/" element={<ContentSongs />} />
                 {/* <Route path="/author-filter/" element={<ContentSongs />} />
@@ -26,7 +32,7 @@ const SongsList = () => {
                 <Route path="/100-dance-filter/" element={<ContentSongs />} />
                 <Route path="/indi-filter/" element={<ContentSongs />} /> */}
             </Routes>
-        </div>
+        </Content>
     );
 };
 

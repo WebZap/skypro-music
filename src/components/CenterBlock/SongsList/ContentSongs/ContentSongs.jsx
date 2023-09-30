@@ -2,6 +2,7 @@ import { useState } from "react";
 import SkeletonTrack from "../../../Skeleton_modules/SkelotonTrack";
 
 import SongItem from "./SongItem/SongItem";
+import { Playlist } from "../../../../styled_components/songsListComponents";
 
 const ContentSongs = () => {
     const [viseble, setViseble] = useState(false);
@@ -12,7 +13,7 @@ const ContentSongs = () => {
 
     const visibleContent = viseble ? <SongItem /> : <SkeletonTrack />;
 
-    return <div className="content__playlist playlist">{visibleContent}</div>;
+    return <Playlist>{visibleContent}</Playlist>;
 };
 
 export default ContentSongs;

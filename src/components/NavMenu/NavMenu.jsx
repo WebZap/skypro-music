@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
 import MenuList from "./MenuList/MenuList";
+import {
+    BurgerMenu,
+    Line,
+    Logo,
+    LogoBlock,
+    Menu,
+    MenuBlock,
+} from "../../styled_components/navMenuComponents";
 
 const NavMenu = () => {
     const [open, setOpen] = useState(false);
@@ -12,23 +20,19 @@ const NavMenu = () => {
     let burger = open ? <MenuList /> : null;
 
     return (
-        <div>
-            <nav className="main__nav nav">
-                <div className="nav__logo logo">
-                    <img
-                        className="logo__image"
-                        src="img/logo.png"
-                        alt="logo"
-                    />
-                </div>
-                <div className="nav__burger burger" onClick={toggleOpen}>
-                    <span className="burger__line"></span>
-                    <span className="burger__line"></span>
-                    <span className="burger__line"></span>
-                </div>
-                <div className="nav__menu menu">{burger}</div>
-            </nav>
-        </div>
+        <>
+            <MenuBlock>
+                <LogoBlock>
+                    <Logo src="img/logo.png" alt="logo" />
+                </LogoBlock>
+                <BurgerMenu onClick={toggleOpen}>
+                    <Line />
+                    <Line />
+                    <Line />
+                </BurgerMenu>
+                <Menu>{burger}</Menu>
+            </MenuBlock>
+        </>
     );
 };
 

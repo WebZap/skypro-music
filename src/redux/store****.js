@@ -17,8 +17,4 @@ export const getTitleFilterName = () => {
 
 }
 
-
-
-
-
 export default store;
