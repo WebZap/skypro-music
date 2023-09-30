@@ -5,12 +5,20 @@ import {
 import FilterList from "./FilterList/FilterList";
 
 const FIlterButton = (props) => {
-    const { title, isOpen, selectFilter, dataList } = props;
+    const changeStatus = () => {
+        if (filter === filterOpen) {
+        }
+    };
 
+    const { title, onClickFilter, dataList, filter, filterOpen } = props;
+    console.log(filterOpen);
     return (
         <WrappButton>
-            <FilterButton onClick={selectFilter}>{title}</FilterButton>
-            {isOpen && <FilterList dataList={dataList} />}
+            <FilterButton onClick={() => onClickFilter(filter)}>
+                {title}
+            </FilterButton>
+            {/* {isOpen && <FilterList dataList={dataList} />} */}
+            {filter === filterOpen ? <FilterList dataList={dataList} /> : null}
         </WrappButton>
     );
 };

@@ -14,7 +14,7 @@ const App = (props) => {
                 <Main>
                     <NavMenu />
                     <CenterBlock />
-                    <SideBar />
+                    <SideBar state={props.state} />
                 </Main>
                 <PlayerBar />
                 <Footer />

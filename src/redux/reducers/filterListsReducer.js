@@ -1,10 +1,6 @@
 const RENDER_FILTER = 'RENDER_FILTER_LIST'
+const OPEN_FILTER = 'OPEN_FILTER'
 
-export const renderFilterListAction = () => {
-    return {
-        type: RENDER_FILTER
-    }
-}
 
 const initialState = {
     filterAuthor: {
@@ -51,15 +47,39 @@ const initialState = {
 }
 
 const filterListReducer = (state = initialState, action) => {
+    debugger
     switch (action.type) {
         case RENDER_FILTER:
             return {
                 ...state
             }
+        case OPEN_FILTER:
+            return {
+                ...state,
+                filterOpen: action.filterType
+            }
+        case CHANGE_STATUS:
+            return {
+                ...state,
+
+            }
         default:
             return {
                 ...state
             }
+    }
+}
+
+export const renderFilterListAction = () => {
+    return {
+        type: RENDER_FILTER
+    }
+}
+
+export const openFilter = (filterType) => {
+    return {
+        type: OPEN_FILTER,
+        filterType
     }
 }
 
