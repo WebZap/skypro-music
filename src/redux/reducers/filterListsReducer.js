@@ -50,25 +50,20 @@ const filterListReducer = (state = initialState, action) => {
     debugger
     switch (action.type) {
         case RENDER_FILTER:
-            return {
-                ...state
-            }
+            return state
         case OPEN_FILTER:
+            const newFilterOpen = state.filterOpen === action.filterType ? '' : action.filterType//проверка значения ключа и получаемого из акшина ключ
             return {
                 ...state,
-                filterOpen: action.filterType
-            }
-        case CHANGE_STATUS:
-            return {
-                ...state,
-
+                filterOpen: newFilterOpen
             }
         default:
-            return {
-                ...state
-            }
+            return state;
     }
 }
+
+
+
 
 export const renderFilterListAction = () => {
     return {
@@ -84,4 +79,3 @@ export const openFilter = (filterType) => {
 }
 
 export default filterListReducer
-

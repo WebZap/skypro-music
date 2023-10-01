@@ -3,12 +3,11 @@ import Personal from "./Personal/Personal";
 import SidebarCards from "./SidebarCards/SidebarCards";
 
 const SideBar = (props) => {
+    const { sideBarCards } = props;
     return (
         <SideBarBlock>
             <Personal />
-            <SidebarCards
-                sideBarCards={props.state.sideBar.sideBarCardsArray}
-            />
+            <SidebarCards sideBarCards={sideBarCards} />
         </SideBarBlock>
     );
 };

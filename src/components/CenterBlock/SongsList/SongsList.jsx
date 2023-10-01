@@ -1,11 +1,10 @@
-import { Route, Routes } from "react-router-dom";
-import ContentSongs from "./ContentSongs/ContentSongs";
 import {
     Column,
     Content,
     Title,
     TitleSvg,
 } from "../../../styled_components/songsListComponents";
+import SongsListRouteBlock from "../../../routes/SongListRouteBlock.routes";
 
 const SongsList = () => {
     return (
@@ -20,18 +19,7 @@ const SongsList = () => {
                     </TitleSvg>
                 </Column>
             </Title>
-            <Routes>
-                <Route path="/" element={<ContentSongs />} />
-                {/* <Route path="/author-filter/" element={<ContentSongs />} />
-                <Route path="/year-filter/" element={<ContentSongs />} />
-                <Route path="/genre-filter/" element={<ContentSongs />} /> */}
-                {/* <Route
-                    path="/playlist-day-filter/"
-                    element={<ContentSongs />}
-                />
-                <Route path="/100-dance-filter/" element={<ContentSongs />} />
-                <Route path="/indi-filter/" element={<ContentSongs />} /> */}
-            </Routes>
+            <SongsListRouteBlock />
         </Content>
     );
 };

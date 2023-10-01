@@ -21,5 +21,9 @@
         "Vika",
         "viseble",
         "Viseble"
-    ]
+    ],
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    }
 }

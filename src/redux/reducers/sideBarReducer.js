@@ -15,17 +15,17 @@ let initialState = {
     ]
 }
 
+
+
 const sideBarCardsReducers = (state = initialState, action) => {
     switch (action.type) {
         case RENDER_CARDS:
-            return {
-                ...state
-            };
+            return state
         default:
-            return {
-                ...state
-            };
+            return state
     }
 }
+
+
 
 export default sideBarCardsReducers

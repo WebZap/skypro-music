@@ -5,12 +5,17 @@ import {
     FilterNavLinks,
 } from "../../../../../styled_components/filterComponents";
 
-const FilterList = ({ dataList }) => {
+const FilterList = ({ dataList, onClickFilter }) => {
     return (
         <FilterListWrapp>
             <FilterListItems>
                 {dataList.map((item) => (
-                    <FilterNavLinks to={item.path}>
+                    <FilterNavLinks
+                        onClick={() => {
+                            onClickFilter("");
+                        }}
+                        to={item.path}
+                    >
                         {item.titleItem}
                     </FilterNavLinks>
                 ))}
