@@ -30,7 +30,7 @@ function PlayTrackBlock(props) {
                 <AlbumLink href="http://">
                     {intireTrackData.author !== "-"
                         ? `${intireTrackData.author.slice(0, 3)} . . .`
-                        : " - "}
+                        : " -"}
                 </AlbumLink>
             </Album>
         </Contain>
