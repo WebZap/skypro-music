@@ -47,7 +47,7 @@ const initialState = {
 }
 
 const filterListReducer = (state = initialState, action) => {
-    debugger
+
     switch (action.type) {
         case RENDER_FILTER:
             return state

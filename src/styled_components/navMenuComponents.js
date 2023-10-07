@@ -16,12 +16,14 @@ export const LogoBlock = styled.div`
 `;
 
 export const Logo = styled.img`
+    cursor: pointer;
     width: 113.33px;
     height: 17px;
     color: #181818;
 `;
 
 export const BurgerMenu = styled.div`
+    cursor: pointer;
     width: 20px;
     height: 36px;
     padding: 13px 0;

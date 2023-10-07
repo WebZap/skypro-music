@@ -32,12 +32,9 @@ import {
     WrappVolume,
 } from "../../styled_components/playerBarComponents";
 
-const PlayerBar = () => {
-    const [viseble, setViseble] = useState(false);
-
-    setTimeout(() => {
-        setViseble(true);
-    }, 2000);
+const PlayerBar = (props) => {
+    const { intireTrackData } = props;
+    console.log(intireTrackData);
 
     return (
         <WrappBar>
@@ -48,34 +45,36 @@ const PlayerBar = () => {
                         <Controls>
                             <PrevButton>
                                 <PreSvg alt="prev">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-prev"></use>
                                 </PreSvg>
                             </PrevButton>
                             <PlayButton>
                                 <PlaySvg alt="play">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-play"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-play"></use>
                                 </PlaySvg>
                             </PlayButton>
                             <NextButton>
                                 <NextSvg alt="next">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-next"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-next"></use>
                                 </NextSvg>
                             </NextButton>
                             <RepeatButton>
                                 <RepeatSvg alt="repeat">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-repeat"></use>
                                 </RepeatSvg>
                             </RepeatButton>
                             <ShuffleButton>
                                 <ShuffleSvg alt="shuffle">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-shuffle"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-shuffle"></use>
                                 </ShuffleSvg>
                             </ShuffleButton>
                         </Controls>
 
                         <WrappTrackPlay>
-                            {viseble ? (
-                                <PlayTrackBlock />
+                            {intireTrackData ? (
+                                <PlayTrackBlock
+                                    intireTrackData={intireTrackData}
+                                />
                             ) : (
                                 <SkeletonPlayTrack />
                             )}
@@ -86,7 +85,7 @@ const PlayerBar = () => {
                                         // className="track-play__like-svg"
                                         alt="like"
                                     >
-                                        <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
+                                        <use xlinkHref="/img/icon/sprite.svg#icon-like"></use>
                                     </LDSBvg>
                                 </LikeButton>
                                 <DisLikeButton>
@@ -94,7 +93,7 @@ const PlayerBar = () => {
                                         // className="track-play__dislike-svg"
                                         alt="dislike"
                                     >
-                                        <use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
+                                        <use xlinkHref="/img/icon/sprite.svg#icon-dislike"></use>
                                     </LDSBvg>
                                 </DisLikeButton>
                             </WrappLikeDisLike>
@@ -104,7 +103,7 @@ const PlayerBar = () => {
                         <WrappVolume>
                             <ImageVolume>
                                 <SvgVolume alt="volume">
-                                    <use xlinkHref="img/icon/sprite.svg#icon-volume"></use>
+                                    <use xlinkHref="/img/icon/sprite.svg#icon-volume"></use>
                                 </SvgVolume>
                             </ImageVolume>
                             <ProgressVolume>

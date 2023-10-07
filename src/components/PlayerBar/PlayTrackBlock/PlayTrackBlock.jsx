@@ -9,19 +9,29 @@ import {
     TrackSvg,
 } from "../../../styled_components/playerBarComponents";
 
-function PlayTrackBlock() {
+function PlayTrackBlock(props) {
+    const { intireTrackData } = props;
+
     return (
         <Contain>
             <TrackImage>
                 <TrackSvg alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
+                    <use xlinkHref="/img/icon/sprite.svg#icon-note"></use>
                 </TrackSvg>
             </TrackImage>
             <Author>
-                <AuthorLink href="http://">Ты та...</AuthorLink>
+                <AuthorLink href="http://">
+                    {intireTrackData.name
+                        ? `${intireTrackData.name.slice(0, 6)} . . .`
+                        : " - "}
+                </AuthorLink>
             </Author>
             <Album>
-                <AlbumLink href="http://">Баста</AlbumLink>
+                <AlbumLink href="http://">
+                    {intireTrackData.author !== "-"
+                        ? `${intireTrackData.author.slice(0, 3)} . . .`
+                        : " - "}
+                </AlbumLink>
             </Album>
         </Contain>
     );

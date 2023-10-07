@@ -13,39 +13,45 @@ import {
     Text,
 } from "../../../../../styled_components/songsListComponents";
 
-const SongItem = () => {
+const SongItem = ({ song, onSaveDuration, onClickTrack }) => {
+    const { id, album, name, author, logo, duration_in_seconds } = song;
+
     return (
         <SongWrapper>
-            <Track>
+            <Track onClick={() => onClickTrack(id)}>
                 <BlockTitle>
                     <TitleImage>
-                        <Svg alt="music">
-                            <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-                        </Svg>
+                        {logo ? (
+                            logo
+                        ) : (
+                            <Svg alt="music">
+                                <use xlinkHref="/img/icon/sprite.svg#icon-note"></use>
+                            </Svg>
+                        )}
                     </TitleImage>
 
                     <LinkStyle href="http://">
-                        Guilt <Uvailable></Uvailable>
+                        <Uvailable>{name}</Uvailable>
                     </LinkStyle>
                 </BlockTitle>
 
                 <BlockAuthor>
                     <LinkStyle align="left" href="http://">
-                        Nero
+                        {author}
                     </LinkStyle>
                 </BlockAuthor>
 
                 <BlockAlbum>
                     <LinkStyle color="#696969" href="http://">
-                        Welcome Reality
+                        {album}
                     </LinkStyle>
                 </BlockAlbum>
 
                 <BlockTime>
                     <Like alt="time">
-                        <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
+                        <use xlinkHref="/img/icon/sprite.svg#icon-like"></use>
                     </Like>
-                    <Text>4:44</Text>
+                    <Text>{onSaveDuration(duration_in_seconds)}</Text>
                 </BlockTime>
             </Track>
         </SongWrapper>

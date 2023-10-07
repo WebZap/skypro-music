@@ -23,7 +23,7 @@ const NavMenu = () => {
         <>
             <MenuBlock>
                 <LogoBlock>
-                    <Logo src="img/logo.png" alt="logo" />
+                    <Logo src="/img/logo.png" alt="logo" />
                 </LogoBlock>
                 <BurgerMenu onClick={toggleOpen}>
                     <Line />

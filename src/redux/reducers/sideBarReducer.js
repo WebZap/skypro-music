@@ -9,9 +9,9 @@ export const renderCardAction = () => {
 
 let initialState = {
     sideBarCardsArray: [
-        { id: 0, src: "img/playlist01.png", ref: "#", altData: "day's playlist" },
-        { id: 1, src: "img/playlist02.png", ref: "#", altData: "100 dance" },
-        { id: 2, src: "img/playlist03.png", ref: "#", altData: "Indi power" },
+        { id: "1", src: "/img/playlist01.png", ref: "/collections/1", altData: "day's playlist", title: "Плейлист Дня" },
+        { id: "2", src: "/img/playlist02.png", ref: "/collections/2", altData: "100 dance", title: "Танцевальные 100" },
+        { id: "3", src: "/img/playlist03.png", ref: "/collections/3", altData: "Indi power", title: "Инди Заряд" },
     ]
 }
 

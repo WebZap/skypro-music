@@ -7,7 +7,7 @@ import {
 const SidebarItem = (props) => {
     return (
         <Card>
-            <LinkS href={props.href}>
+            <LinkS to={props.href}>
                 <ImageS src={props.src} alt={props.alt} />
             </LinkS>
         </Card>

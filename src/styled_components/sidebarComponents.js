@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const SideBarBlock = styled.div`
@@ -46,7 +47,7 @@ export const Card = styled.div`
     }
 `;
 
-export const LinkS = styled.a`
+export const LinkS = styled(NavLink)`
     width: 100%;
     height: 100%;
 `;
