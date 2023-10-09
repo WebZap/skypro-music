@@ -4,8 +4,7 @@ import {
     Title,
     TitleSvg,
 } from "../../../styled_components/songsListComponents";
-import SongsListRouteBlock from "../../../routes/SongListRouteBlock.routes";
-import ContentSongs from "./ContentSongs/ContentSongs";
+
 import ContentSongsContainer from "./ContentSongs/ContentSongsContainer";
 
 const SongsList = () => {

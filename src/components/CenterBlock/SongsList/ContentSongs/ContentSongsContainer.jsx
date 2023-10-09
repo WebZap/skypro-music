@@ -7,7 +7,9 @@ import {
     setEntireTrack,
     setVisibleTracks,
 } from "../../../../redux/reducers/songsReducer";
-import trackApi from "../../../../api/trackAPI";
+import TrackApi from "../../../../api/TrackApi";
+
+const trackApi = new TrackApi();
 
 const ContentSongsContainer = (props) => {
     const {

@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PlayerBar from "./PlayerBar";
 import { setDataEntireTrack } from "../../redux/reducers/songsReducer";
-import trackApi from "../../api/trackAPI";
+
+import TrackApi from "../../api/TrackApi";
+
+const trackApi = new TrackApi();
 
 const PlayerBarContainer = (props) => {
     const { intireTrackID, intireTrackData, setDataEntireTrack, isFetching } =
