@@ -1,20 +1,26 @@
-import React from 'react';
+import React from "react";
+import {
+    FilterListItems,
+    FilterListWrapp,
+    FilterNavLinks,
+} from "../../../../../styled_components/filterComponents";
 
-const FilterList = () => {
+const FilterList = ({ dataList, onClickFilter }) => {
     return (
-        <div className="filter-list" style={{position:"absolute", top: "50px"}}>
-            <ul className="filter-list__items">
-                <li className="filter-list__item filter-list__item--active">Активный элемент</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-                <li className="filter-list__item">Элемент 2</li>
-                <li className="filter-list__item">Элемент 3</li>
-            </ul>
-        </div>
+        <FilterListWrapp>
+            <FilterListItems>
+                {dataList.map((item) => (
+                    <FilterNavLinks
+                        onClick={() => {
+                            onClickFilter("");
+                        }}
+                        to={item.path}
+                    >
+                        {item.titleItem}
+                    </FilterNavLinks>
+                ))}
+            </FilterListItems>
+        </FilterListWrapp>
     );
 };
 

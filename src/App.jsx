@@ -1,27 +1,18 @@
 import React from "react";
+import AppRoutes from "./routes/AppRoutes.routes";
 
-import NavMenu from "./components/NavMenu/NavMenu";
-import CenterBlock from "./components/CenterBlock/CenterBlock";
-import SideBar from "./components/SideBar/SideBar";
-import Footer from "./components/Footer/Footer";
-import PlayerBar from "./components/PlayerBar/PlayerBar";
-import SkeletonSidebar from "./components/Skeleton_modules/SkeletonSidebar";
+const App = () => {
+    const handleLogin = () => {
+        localStorage.setItem("user", "true");
+    };
 
-const App = (props) => {
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+    };
+
     return (
-        <div className="wrapper">
-            <div className="container">
-                <main className="main">
-                    <NavMenu />
-                    <CenterBlock />
-                    <SideBar sideBarCards={props.sideBarCards} />
-                </main>
-                <PlayerBar />
-                <Footer />
-            </div>
-        </div>
+        <AppRoutes onButtonLogin={handleLogin} onButtonLogout={handleLogout} />
     );
 };
-
 
 export default App;
