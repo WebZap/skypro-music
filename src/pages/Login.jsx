@@ -51,7 +51,7 @@ const Login = ({ onButtonLogin }) => {
                             Войти
                         </ButtonEnter>
                         <ButtonSignup>
-                            <ButtonLinkSignup to="/registration">
+                            <ButtonLinkSignup to="/register">
                                 Зарегистрироваться
                             </ButtonLinkSignup>
                         </ButtonSignup>

@@ -8,7 +8,7 @@ const MenuList = () => {
     return (
         <List>
             <BurgerNavLink to="/">Главное</BurgerNavLink>
-            <BurgerNavLink to="/my-tracks">Мой плейлист</BurgerNavLink>
+            <BurgerNavLink to="/favorites">Мой плейлист</BurgerNavLink>
             <BurgerNavLink to="/login">Войти</BurgerNavLink>
         </List>
     );

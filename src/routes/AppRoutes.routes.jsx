@@ -6,7 +6,7 @@ import Registration from "../pages/Registration";
 import Collections from "../pages/Collections";
 import NotFound404 from "../pages/Page404";
 import UserTracks from "../pages/UserTracks";
-import ProtectedRoute from "../hoc/ProtectedRoute";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRoutes = ({ onButtonLogin, onButtonLogout }) => {
     return (
@@ -15,13 +15,14 @@ const AppRoutes = ({ onButtonLogin, onButtonLogout }) => {
                 path="/login"
                 element={<Login onButtonLogin={onButtonLogin} />}
             />
+            <Route path="/register" element={<Registration />} />
             <Route element={<ProtectedRoute />}>
                 <Route
                     path="/"
                     element={<MainPage onButtonLogout={onButtonLogout} />}
                 />
-                <Route path="/my-tracks" element={<UserTracks />} />
-                <Route path="/collections/:id/*" element={<Collections />} />
+                <Route path="/favorites" element={<UserTracks />} />
+                <Route path="/category/:id/*" element={<Collections />} />
             </Route>
             <Route path="*" element={<NotFound404 />} />
         </Routes>

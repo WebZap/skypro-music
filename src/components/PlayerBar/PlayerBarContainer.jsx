@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import PlayerBar from "./PlayerBar";
-import axios from "axios";
 import { setDataEntireTrack } from "../../redux/reducers/songsReducer";
+import trackApi from "../../api/trackAPI";
 
 const PlayerBarContainer = (props) => {
     const { intireTrackID, intireTrackData, setDataEntireTrack, isFetching } =
         props;
     console.log(intireTrackID);
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(
-                    `https://skypro-music-api.skyeng.tech/catalog/track/${intireTrackID}`
-                );
-                setDataEntireTrack(response.data);
-            } catch (error) {
-                alert(`Здесь ошибка бля ${error}`);
-            }
-        };
-        debugger;
         if (intireTrackID) {
-            fetchData();
+            trackApi.getEntireTrack(setDataEntireTrack, intireTrackID);
         }
     }, [intireTrackID]);
 

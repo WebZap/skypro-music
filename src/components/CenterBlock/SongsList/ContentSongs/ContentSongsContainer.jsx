@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react";
-import SkeletonTrack from "../../../Skeleton_modules/SkelotonTrack";
-
-import SongItem from "./SongItem/SongItem";
-import { Playlist } from "../../../../styled_components/songsListComponents";
-import axios from "axios";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
 import ContentSongs from "./ContentSongs";
 import { connect } from "react-redux";
 import {
@@ -11,9 +7,7 @@ import {
     setEntireTrack,
     setVisibleTracks,
 } from "../../../../redux/reducers/songsReducer";
-
-// isPlayerView : false, - openPlayerEntireTrack(){ПО КЛИКУ МЕНЯТЬ ТРУ НА ФОЛС} - там будет тернарник п.с Влада
-//
+import trackApi from "../../../../api/trackAPI";
 
 const ContentSongsContainer = (props) => {
     const {
@@ -25,20 +19,11 @@ const ContentSongsContainer = (props) => {
         isFetching,
     } = props;
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(
-                    "https://skypro-music-api.skyeng.tech/catalog/track/all/"
-                );
-                setAllTracks(response.data);
-                setTimeout(() => {
-                    setVisibleTracks();
-                }, 2000);
-            } catch (error) {
-                alert(error);
-            }
-        };
-        fetchData();
+        trackApi.getAllTracks(setAllTracks).then(() => {
+            setTimeout(() => {
+                setVisibleTracks();
+            }, 2000);
+        });
     }, []);
 
     function convertSecondsToMinutes(seconds) {
