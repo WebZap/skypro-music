@@ -1,5 +1,7 @@
+import { FooterBlock } from "../../styled_components/songsListComponents";
+
 const Footer = () => {
-    return <footer className="footer"></footer>;
+    return <FooterBlock />;
 };
 
 export default Footer;

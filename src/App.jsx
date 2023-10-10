@@ -1,27 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import AppRoutes from "./routes/AppRoutes.routes";
 
-import NavMenu from "./components/NavMenu/NavMenu";
-import CenterBlock from "./components/CenterBlock/CenterBlock";
-import SideBar from "./components/SideBar/SideBar";
-import Footer from "./components/Footer/Footer";
-import PlayerBar from "./components/PlayerBar/PlayerBar";
-import SkeletonSidebar from "./components/Skeleton_modules/SkeletonSidebar";
+const App = () => {
+    const [user, setUser] = useState(
+        (/* Срабатывает один раз при инициализации компонента*/) => {
+            const savedUser = localStorage.getItem("user");
+            return savedUser === "true" ? true : null;
+        }
+    );
 
-const App = (props) => {
+    const handleLogin = () => {
+        localStorage.setItem("user", "true");
+        setUser(true);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        setUser(null);
+    };
+
     return (
-        <div className="wrapper">
-            <div className="container">
-                <main className="main">
-                    <NavMenu />
-                    <CenterBlock />
-                    <SideBar sideBarCards={props.sideBarCards} />
-                </main>
-                <PlayerBar />
-                <Footer />
-            </div>
-        </div>
+        <AppRoutes
+            isLogin={user}
+            onButtonLogin={handleLogin}
+            onButtonLogout={handleLogout}
+        />
     );
 };
-
 
 export default App;

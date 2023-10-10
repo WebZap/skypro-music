@@ -1,24 +1,39 @@
 import React from "react";
+import {
+    Album,
+    AlbumLink,
+    Author,
+    AuthorLink,
+    Contain,
+    TrackImage,
+    TrackSvg,
+} from "../../../styled_components/playerBarComponents";
 
-function PlayTrackBlock() {
+function PlayTrackBlock(props) {
+    const { intireTrackData } = props;
+
     return (
-        <div className="track-play__contain">
-            <div className="track-play__image">
-                <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-                </svg>
-            </div>
-            <div className="track-play__author">
-                <a className="track-play__author-link" href="http://">
-                    Ты та...
-                </a>
-            </div>
-            <div className="track-play__album">
-                <a className="track-play__album-link" href="http://">
-                    Баста
-                </a>
-            </div>
-        </div>
+        <Contain>
+            <TrackImage>
+                <TrackSvg alt="music">
+                    <use xlinkHref="/img/icon/sprite.svg#icon-note"></use>
+                </TrackSvg>
+            </TrackImage>
+            <Author>
+                <AuthorLink href="http://">
+                    {intireTrackData.name
+                        ? `${intireTrackData.name.slice(0, 6)} . . .`
+                        : " - "}
+                </AuthorLink>
+            </Author>
+            <Album>
+                <AlbumLink href="http://">
+                    {intireTrackData.author !== "-"
+                        ? `${intireTrackData.author.slice(0, 3)} . . .`
+                        : " -"}
+                </AlbumLink>
+            </Album>
+        </Contain>
     );
 }
 

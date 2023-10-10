@@ -1,22 +1,16 @@
+// import { List } from "react-content-loader";
+import {
+    BurgerNavLink,
+    List,
+} from "../../../styled_components/navMenuComponents";
+
 const MenuList = () => {
     return (
-        <ul className="menu__list">
-            <li className="menu__item">
-                <a href="#" className="menu__link">
-                    Главное
-                </a>
-            </li>
-            <li className="menu__item">
-                <a href="#" className="menu__link">
-                    Мой плейлист
-                </a>
-            </li>
-            <li className="menu__item">
-                <a href="../signin.html" className="menu__link">
-                    Войти
-                </a>
-            </li>
-        </ul>
+        <List>
+            <BurgerNavLink to="/">Главное</BurgerNavLink>
+            <BurgerNavLink to="/favorites">Мой плейлист</BurgerNavLink>
+            <BurgerNavLink to="/login">Войти</BurgerNavLink>
+        </List>
     );
 };
 

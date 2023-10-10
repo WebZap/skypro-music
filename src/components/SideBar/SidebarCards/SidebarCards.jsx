@@ -1,15 +1,17 @@
 import { useState } from "react";
 import SkeletonSidebar from "../../Skeleton_modules/SkeletonSidebar";
 import SidebarItem from "./SidebarItem/SidebarItem";
+import { CardsWrapp } from "../../../styled_components/sidebarComponents";
 
 const SidebarCards = (props) => {
-    const [viseble, setViseble] = useState(false);
+    const { sideBarCards } = props;
 
+    const [viseble, setViseble] = useState(false);
     setTimeout(() => {
         setViseble(true);
     }, 2000);
 
-    let sideBarItems = props.sideBarCards.map((card) =>
+    let sideBarItems = sideBarCards.map((card) =>
         viseble ? (
             <SidebarItem
                 key={card.id}
@@ -22,7 +24,7 @@ const SidebarCards = (props) => {
         )
     );
 
-    return <div className="sidebar__block">{sideBarItems}</div>;
+    return <CardsWrapp>{sideBarItems}</CardsWrapp>;
 };
 
 export default SidebarCards;
