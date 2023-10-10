@@ -8,7 +8,7 @@ import NotFound404 from "../pages/Page404";
 import UserTracks from "../pages/UserTracks";
 import ProtectedRoute from "../components/ProtectedRoute";
 
-const AppRoutes = ({ onButtonLogin, onButtonLogout }) => {
+const AppRoutes = ({ onButtonLogin, onButtonLogout, isLogin }) => {
     return (
         <Routes>
             <Route
@@ -16,7 +16,7 @@ const AppRoutes = ({ onButtonLogin, onButtonLogout }) => {
                 element={<Login onButtonLogin={onButtonLogin} />}
             />
             <Route path="/register" element={<Registration />} />
-            <Route element={<ProtectedRoute />}>
+            <Route element={<ProtectedRoute isLogin={isLogin} />}>
                 <Route
                     path="/"
                     element={<MainPage onButtonLogout={onButtonLogout} />}

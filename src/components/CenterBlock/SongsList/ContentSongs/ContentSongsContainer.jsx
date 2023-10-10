@@ -34,6 +34,8 @@ const ContentSongsContainer = (props) => {
         return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
     }
 
+    console.log(trackApi);
+
     return (
         <>
             {isFetching ? (

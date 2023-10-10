@@ -1,4 +1,3 @@
-import Filter from "./Filter/Filter";
 import FilterContainer from "./Filter/FilterContainer";
 import Search from "./Search/Search";
 import SongsList from "./SongsList/SongsList";
